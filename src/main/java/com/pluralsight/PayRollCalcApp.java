@@ -72,8 +72,8 @@ public class PayRollCalcApp {
 
             }
             //Close outside of loop
-            theFile2.close();
-            fileWriter.close();
+            theFile2.close();//bufferedwriter
+            fileWriter.close();//filewriter
 
             //Exception e will catch all errors
         } catch (Exception e) {
