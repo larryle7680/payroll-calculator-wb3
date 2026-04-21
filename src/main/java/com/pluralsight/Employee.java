@@ -16,7 +16,7 @@ public class Employee {
 
     public double getGrossPay(){
         //Do some math and return the gross pay (hours worked * pay rate
-        return 0.0;
+        return hoursWorked * payRate;
     }
 
     //Setters and Getters
