@@ -1,10 +1,10 @@
 package com.pluralsight;
 
 public class Employee {
-    private int employeeId = 0;
-    private String name = "";
-    private double hoursWorked = 0;
-    private double payRate = 0;
+    private int employeeId;
+    private String name;
+    private double hoursWorked;
+    private double payRate;
 
     //Constructors
     public Employee(int employeeId, String name, double hoursWorked, double payRate) {

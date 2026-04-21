@@ -4,13 +4,16 @@ import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.util.Arrays;
+//import java.util.*
 
 public class PayRollCalcApp {
 
     public static void main(String[] args) {
 
         try {
+            //Goes to the source of the file
             FileReader reader = new FileReader("src/main/resources/employees.csv");
+            //Actually reads it line by line/pass the reader into the bufReader ro read the actual files
             BufferedReader theFile = new BufferedReader(reader);
 
             String line;
@@ -37,21 +40,19 @@ public class PayRollCalcApp {
                double employeePayRate = Double.parseDouble(employeeParts[3]);
 
                //Checking to see if it prints
-                System.out.println(Arrays.toString(employeeParts));
+                //System.out.println(Arrays.toString(employeeParts));
 
                 // call the gross pay method on the employee to print out their gross pay
-                System.out.println(line);
+                //System.out.println(line);
 
-                double hoursWorked = 0;
-                double payRate = 0;
-                Employee employee = new Employee(id, name, hoursWorked, payRate);
+                Employee employee = new Employee(id, name, employeeHours, employeePayRate);
 
-                System.out.println(employee.getName() + " gross pay: " + employee.getGrossPay()
+                System.out.printf("ID: %d\n Name: %s\n Gross pay is %.2f.\n",employee.getEmployeeId(),employee.getName(),employee.getGrossPay()
                 );
             }
-
-
+            //Exception e will catch all errors
         } catch (Exception e) {
+            System.out.println("Could not find file");
             throw new RuntimeException(e);
         }
     }
